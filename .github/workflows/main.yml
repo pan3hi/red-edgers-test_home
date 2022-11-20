@@ -46,6 +46,7 @@ jobs:
       
       - name: Cleanup github workspace
         run: |
+          echo $GITHUB_WORKSPACE
           find $GITHUB_WORKSPACE/. ! -name . -prune -exec rm -rf {} +
       
       - name: Get the repository
