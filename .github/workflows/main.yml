@@ -44,6 +44,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       
+      - name: Cleanup github workspace
+        run: |
+          find $GITHUB_WORKSPACE/. ! -name . -prune -exec rm -rf {} +
+      
       - name: Get the repository
         uses: actions/checkout@v2
         with:
