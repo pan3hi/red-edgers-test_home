@@ -64,7 +64,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: pan3hi/test_actions
-          token : 12345
+          token : ${{ secrets.PRI_REPO  }}
           path: test_actions
 
       - name: 2nd          
