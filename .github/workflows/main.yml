@@ -43,7 +43,6 @@ jobs:
     name : metadistro build
     runs-on: ubuntu-latest
     steps:
-      
       - name: Cleanup github workspace
         run: |
           echo $GITHUB_WORKSPACE
@@ -84,7 +83,7 @@ jobs:
           github-server-url: https://github.boschdevcloud.com
 
        - name: 3rd          
-        run: |
+         run: |
            echo " From third repo.. "
            cd test_rededgersTest
            pwd
