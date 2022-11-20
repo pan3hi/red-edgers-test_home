@@ -48,12 +48,24 @@ jobs:
         uses: actions/checkout@v2
         with:
           path:
-
+          
       - name: 1st          
         run: |
            pwd
            ls
-           echo " Checking for test result and findings.. "
+           echo " from 1st repo.. "
+          
+      - name: Get the second repository
+        uses: actions/checkout@v2
+        with:
+          repository:https://github.com/pan3hi/test_actions
+          path:test_actions
+
+      - name: 2nd          
+        run: |
+           pwd
+           ls
+           echo " second.. "
                             
       - name: 2nd
         run: | 
