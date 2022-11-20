@@ -56,9 +56,10 @@ jobs:
           
       - name: 1st          
         run: |
+           echo " from 1st repo.. "
            pwd
            ls
-           echo " from 1st repo.. "
+           
           
       - name: Get the second repository
         uses: actions/checkout@v2
@@ -69,17 +70,23 @@ jobs:
 
       - name: 2nd          
         run: |
+           echo " From second repo.. "
            cd test_actions
            pwd
-           ls
-           echo " second.. "
-                            
-      - name: 2nd
-        run: | 
-           echo "### Test criteria 2 fails!" 
-           echo  "Step 2 "
-      
-     
-      
+           ls                                   
+            
+      - name: Get the third repository
+        uses: actions/checkout@v2
+        with:
+          repository: sdv/red-edgers-test
+          token : ${{ secrets.PRI_REPO  }}
+          path: test_rededgersTest
+          github-server-url: https://github.boschdevcloud.com
 
-                
+       - name: 3rd          
+        run: |
+           echo " From third repo.. "
+           cd test_rededgersTest
+           pwd
+           ls
+           echo " third.. "         
