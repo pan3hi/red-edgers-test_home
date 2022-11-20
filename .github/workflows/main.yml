@@ -58,7 +58,7 @@ jobs:
       - name: Get the second repository
         uses: actions/checkout@v2
         with:
-          repository: pan3hi/test_actions
+          repository: pan3hi/_test
           path: test_actions
 
       - name: 2nd          
