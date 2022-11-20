@@ -1,0 +1,13 @@
+#!/usr/bin/python3
+import filecmp
+
+f1 = "Integrity_report.file"
+f2 = "Expected_report.file"
+  
+def main():
+	# deep comparison
+	result = filecmp.cmp(f1, f2, shallow=False)
+	print(result)
+
+if __name__ == "__main__":
+    main()
