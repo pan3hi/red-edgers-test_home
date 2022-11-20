@@ -69,6 +69,7 @@ jobs:
 
       - name: 2nd          
         run: |
+           cd test_actions
            pwd
            ls
            echo " second.. "
