@@ -79,7 +79,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: sdv/red-edgers-test
-          token : ${{ secrets.PRI_REPO  }}
+          token : ${{ secrets.CLOUD  }}
           path: test_rededgersTest
           github-server-url: https://github.boschdevcloud.com
 
