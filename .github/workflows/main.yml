@@ -82,10 +82,10 @@ jobs:
           path: test_rededgersTest
           github-server-url: https://github.boschdevcloud.com
 
-       - name: 3rd          
-         run: |
+      - name: 3rd          
+        run: |
            echo " From third repo.. "
            cd test_rededgersTest
            pwd
            ls
-           echo " third.. "         
+           echo " third.. "  
