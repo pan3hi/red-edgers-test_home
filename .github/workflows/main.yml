@@ -1,0 +1,66 @@
+name : dualrepo
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning' 
+        type: choice
+        options:
+        - info
+        - warning
+        - debug 
+      print_tags:
+        description: 'True to print to STDOUT'
+        required: true 
+        type: boolean 
+      tags:
+        description: 'Test scenario tags'
+        required: true 
+        type: string
+
+  release:
+    types: [created, edited]
+  
+jobs:
+  build:
+    strategy
+      matrix:
+        project:
+          [
+            #full-qemux86-64,
+            #full-rpi4-64,
+            full-rpi4-64-kirkstone,
+            thud-qemux86
+          ]
+        image: [core-image-minimal]
+        include:
+          - project: full-qemux86-64
+            image: core-image-base
+          - project: owa5x-64-re
+            image: rededger-image
+    name : metadistro build
+    runs-on: ubuntu-latest
+    steps:
+      
+      - name: Get the repository
+        uses: actions/checkout@v2
+        with:
+          path:
+
+      - name: 1st          
+        run: |
+           pwd
+           ls
+           echo " Checking for test result and findings.. "
+                            
+      - name: 2nd
+        run: | 
+           echo "### Test criteria 2 fails!" 
+           echo  "Step 2 "
+      
+     
+      
+
+                
