@@ -75,7 +75,7 @@ jobs:
            ls                                   
             
       - name: Get the third repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: sdv/red-edgers-test
           token : ${{ secrets.CLOUD  }}
